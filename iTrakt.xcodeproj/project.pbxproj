@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		300DEC9A14D88A4400222ACA /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300DEC9414D88A0400222ACA /* RestKit.framework */; };
+		300DEC9C14D88A7600222ACA /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 300DEC9414D88A0400222ACA /* RestKit.framework */; };
+		30C67B0B14D7EB4D00E8B1F7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */; };
+		30C67B1514D7EB4D00E8B1F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30C67B1314D7EB4D00E8B1F7 /* InfoPlist.strings */; };
+		30C67B1714D7EB4D00E8B1F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B1614D7EB4D00E8B1F7 /* main.m */; };
+		30C67B1B14D7EB4D00E8B1F7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 30C67B1914D7EB4D00E8B1F7 /* Credits.rtf */; };
+		30C67B1E14D7EB4D00E8B1F7 /* TCMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B1D14D7EB4D00E8B1F7 /* TCMAppDelegate.m */; };
+		30C67B2114D7EB4E00E8B1F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C67B1F14D7EB4E00E8B1F7 /* MainMenu.xib */; };
+		30C67B2914D7EE5900E8B1F7 /* TCMTVShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B2814D7EE5900E8B1F7 /* TCMTVShow.m */; };
+		30C67B2D14D7EEEF00E8B1F7 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B2C14D7EEEF00E8B1F7 /* AppleScriptObjC.framework */; };
+		30C67B2F14D7F14F00E8B1F7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B2E14D7F14F00E8B1F7 /* ScriptingBridge.framework */; };
+		30C67B3F14D87F1900E8B1F7 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B3E14D87F1900E8B1F7 /* EMKeychainItem.m */; };
+		30C67B4D14D884AC00E8B1F7 /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B4C14D884AB00E8B1F7 /* libcommonCrypto.dylib */; };
+		3146EB9114D80D7D00191361 /* TCMTrakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146EB9014D80D7D00191361 /* TCMTrakt.m */; };
+		3174B77914D837CB00601C53 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B0E14D7EB4D00E8B1F7 /* CoreData.framework */; };
+		3174B77B14D837DA00601C53 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174B77A14D837DA00601C53 /* CoreServices.framework */; };
+		3174B77D14D837E600601C53 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174B77C14D837E600601C53 /* Security.framework */; };
+		3174B77F14D837F700601C53 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174B77E14D837F700601C53 /* SystemConfiguration.framework */; };
+		3174B78114D8380400601C53 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174B78014D8380400601C53 /* libxml2.dylib */; };
+		3174B79714D84BB700601C53 /* favicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3174B79614D84BB700601C53 /* favicon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		300DEC8F14D88A0400222ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 300DEC8514D88A0400222ACA /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		300DEC9114D88A0400222ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 300DEC8514D88A0400222ACA /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		300DEC9314D88A0400222ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 300DEC8514D88A0400222ACA /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		300DEC9514D88A0400222ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 300DEC8514D88A0400222ACA /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		300DEC9814D88A3400222ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 300DEC8514D88A0400222ACA /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160E61145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		300DEC9B14D88A6B00222ACA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				300DEC9C14D88A7600222ACA /* RestKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		300DEC8514D88A0400222ACA /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		30C67B0614D7EB4D00E8B1F7 /* iTrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		30C67B0D14D7EB4D00E8B1F7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		30C67B0E14D7EB4D00E8B1F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		30C67B0F14D7EB4D00E8B1F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		30C67B1214D7EB4D00E8B1F7 /* iTrakt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrakt-Info.plist"; sourceTree = "<group>"; };
+		30C67B1414D7EB4D00E8B1F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30C67B1614D7EB4D00E8B1F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		30C67B1814D7EB4D00E8B1F7 /* iTrakt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTrakt-Prefix.pch"; sourceTree = "<group>"; };
+		30C67B1A14D7EB4D00E8B1F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		30C67B1C14D7EB4D00E8B1F7 /* TCMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMAppDelegate.h; sourceTree = "<group>"; };
+		30C67B1D14D7EB4D00E8B1F7 /* TCMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMAppDelegate.m; sourceTree = "<group>"; };
+		30C67B2014D7EB4E00E8B1F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		30C67B2714D7EE5900E8B1F7 /* TCMTVShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMTVShow.h; sourceTree = "<group>"; };
+		30C67B2814D7EE5900E8B1F7 /* TCMTVShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMTVShow.m; sourceTree = "<group>"; };
+		30C67B2C14D7EEEF00E8B1F7 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = /System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = "<absolute>"; };
+		30C67B2E14D7F14F00E8B1F7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = ../../../../../System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<group>"; };
+		30C67B3014D7F1DF00E8B1F7 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		30C67B3D14D87F1900E8B1F7 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
+		30C67B3E14D87F1900E8B1F7 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
+		30C67B4C14D884AB00E8B1F7 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		3146EB8F14D80D7D00191361 /* TCMTrakt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMTrakt.h; sourceTree = "<group>"; };
+		3146EB9014D80D7D00191361 /* TCMTrakt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMTrakt.m; sourceTree = "<group>"; };
+		3174B77A14D837DA00601C53 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		3174B77C14D837E600601C53 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3174B77E14D837F700601C53 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3174B78014D8380400601C53 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3174B79614D84BB700601C53 /* favicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favicon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30C67B0314D7EB4D00E8B1F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300DEC9A14D88A4400222ACA /* RestKit.framework in Frameworks */,
+				30C67B4D14D884AC00E8B1F7 /* libcommonCrypto.dylib in Frameworks */,
+				3174B78114D8380400601C53 /* libxml2.dylib in Frameworks */,
+				3174B77F14D837F700601C53 /* SystemConfiguration.framework in Frameworks */,
+				3174B77D14D837E600601C53 /* Security.framework in Frameworks */,
+				3174B77B14D837DA00601C53 /* CoreServices.framework in Frameworks */,
+				3174B77914D837CB00601C53 /* CoreData.framework in Frameworks */,
+				30C67B0B14D7EB4D00E8B1F7 /* Cocoa.framework in Frameworks */,
+				30C67B2D14D7EEEF00E8B1F7 /* AppleScriptObjC.framework in Frameworks */,
+				30C67B2F14D7F14F00E8B1F7 /* ScriptingBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		300DEC8614D88A0400222ACA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				300DEC9014D88A0400222ACA /* libRestKit.a */,
+				300DEC9214D88A0400222ACA /* RestKitTests.octest */,
+				300DEC9414D88A0400222ACA /* RestKit.framework */,
+				300DEC9614D88A0400222ACA /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30C67AFB14D7EB4D00E8B1F7 = {
+			isa = PBXGroup;
+			children = (
+				30C67B1014D7EB4D00E8B1F7 /* iTrakt */,
+				30C67B0914D7EB4D00E8B1F7 /* Frameworks */,
+				30C67B0714D7EB4D00E8B1F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30C67B0714D7EB4D00E8B1F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30C67B0614D7EB4D00E8B1F7 /* iTrakt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30C67B0914D7EB4D00E8B1F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				300DEC8514D88A0400222ACA /* RestKit.xcodeproj */,
+				30C67B4C14D884AB00E8B1F7 /* libcommonCrypto.dylib */,
+				3174B78014D8380400601C53 /* libxml2.dylib */,
+				3174B77E14D837F700601C53 /* SystemConfiguration.framework */,
+				3174B77C14D837E600601C53 /* Security.framework */,
+				3174B77A14D837DA00601C53 /* CoreServices.framework */,
+				30C67B2E14D7F14F00E8B1F7 /* ScriptingBridge.framework */,
+				30C67B2C14D7EEEF00E8B1F7 /* AppleScriptObjC.framework */,
+				30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */,
+				30C67B0C14D7EB4D00E8B1F7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30C67B0C14D7EB4D00E8B1F7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30C67B0D14D7EB4D00E8B1F7 /* AppKit.framework */,
+				30C67B0E14D7EB4D00E8B1F7 /* CoreData.framework */,
+				30C67B0F14D7EB4D00E8B1F7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		30C67B1014D7EB4D00E8B1F7 /* iTrakt */ = {
+			isa = PBXGroup;
+			children = (
+				30C67B3014D7F1DF00E8B1F7 /* iTunes.h */,
+				3146EB8F14D80D7D00191361 /* TCMTrakt.h */,
+				3146EB9014D80D7D00191361 /* TCMTrakt.m */,
+				30C67B2714D7EE5900E8B1F7 /* TCMTVShow.h */,
+				30C67B2814D7EE5900E8B1F7 /* TCMTVShow.m */,
+				30C67B1C14D7EB4D00E8B1F7 /* TCMAppDelegate.h */,
+				30C67B1D14D7EB4D00E8B1F7 /* TCMAppDelegate.m */,
+				30C67B1F14D7EB4E00E8B1F7 /* MainMenu.xib */,
+				30C67B1114D7EB4D00E8B1F7 /* Supporting Files */,
+			);
+			path = iTrakt;
+			sourceTree = "<group>";
+		};
+		30C67B1114D7EB4D00E8B1F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				30C67B3D14D87F1900E8B1F7 /* EMKeychainItem.h */,
+				30C67B3E14D87F1900E8B1F7 /* EMKeychainItem.m */,
+				3174B79614D84BB700601C53 /* favicon.png */,
+				30C67B1214D7EB4D00E8B1F7 /* iTrakt-Info.plist */,
+				30C67B1314D7EB4D00E8B1F7 /* InfoPlist.strings */,
+				30C67B1614D7EB4D00E8B1F7 /* main.m */,
+				30C67B1814D7EB4D00E8B1F7 /* iTrakt-Prefix.pch */,
+				30C67B1914D7EB4D00E8B1F7 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30C67B0514D7EB4D00E8B1F7 /* iTrakt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30C67B2414D7EB4E00E8B1F7 /* Build configuration list for PBXNativeTarget "iTrakt" */;
+			buildPhases = (
+				30C67B0214D7EB4D00E8B1F7 /* Sources */,
+				30C67B0314D7EB4D00E8B1F7 /* Frameworks */,
+				30C67B0414D7EB4D00E8B1F7 /* Resources */,
+				300DEC9B14D88A6B00222ACA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				300DEC9914D88A3400222ACA /* PBXTargetDependency */,
+			);
+			name = iTrakt;
+			productName = iTrakt;
+			productReference = 30C67B0614D7EB4D00E8B1F7 /* iTrakt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30C67AFD14D7EB4D00E8B1F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = TheCodingMonkeys;
+			};
+			buildConfigurationList = 30C67B0014D7EB4D00E8B1F7 /* Build configuration list for PBXProject "iTrakt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 30C67AFB14D7EB4D00E8B1F7;
+			productRefGroup = 30C67B0714D7EB4D00E8B1F7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 300DEC8614D88A0400222ACA /* Products */;
+					ProjectRef = 300DEC8514D88A0400222ACA /* RestKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				30C67B0514D7EB4D00E8B1F7 /* iTrakt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		300DEC9014D88A0400222ACA /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 300DEC8F14D88A0400222ACA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		300DEC9214D88A0400222ACA /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 300DEC9114D88A0400222ACA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		300DEC9414D88A0400222ACA /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 300DEC9314D88A0400222ACA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		300DEC9614D88A0400222ACA /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 300DEC9514D88A0400222ACA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30C67B0414D7EB4D00E8B1F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C67B1514D7EB4D00E8B1F7 /* InfoPlist.strings in Resources */,
+				30C67B1B14D7EB4D00E8B1F7 /* Credits.rtf in Resources */,
+				30C67B2114D7EB4E00E8B1F7 /* MainMenu.xib in Resources */,
+				3174B79714D84BB700601C53 /* favicon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30C67B0214D7EB4D00E8B1F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C67B1714D7EB4D00E8B1F7 /* main.m in Sources */,
+				30C67B1E14D7EB4D00E8B1F7 /* TCMAppDelegate.m in Sources */,
+				30C67B2914D7EE5900E8B1F7 /* TCMTVShow.m in Sources */,
+				3146EB9114D80D7D00191361 /* TCMTrakt.m in Sources */,
+				30C67B3F14D87F1900E8B1F7 /* EMKeychainItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		300DEC9914D88A3400222ACA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKitFramework;
+			targetProxy = 300DEC9814D88A3400222ACA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30C67B1314D7EB4D00E8B1F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30C67B1414D7EB4D00E8B1F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		30C67B1914D7EB4D00E8B1F7 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30C67B1A14D7EB4D00E8B1F7 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		30C67B1F14D7EB4E00E8B1F7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30C67B2014D7EB4E00E8B1F7 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30C67B2214D7EB4E00E8B1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		30C67B2314D7EB4E00E8B1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		30C67B2514D7EB4E00E8B1F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTrakt/iTrakt-Prefix.pch";
+				INFOPLIST_FILE = "iTrakt/iTrakt-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		30C67B2614D7EB4E00E8B1F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTrakt/iTrakt-Prefix.pch";
+				INFOPLIST_FILE = "iTrakt/iTrakt-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30C67B0014D7EB4D00E8B1F7 /* Build configuration list for PBXProject "iTrakt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C67B2214D7EB4E00E8B1F7 /* Debug */,
+				30C67B2314D7EB4E00E8B1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30C67B2414D7EB4E00E8B1F7 /* Build configuration list for PBXNativeTarget "iTrakt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C67B2514D7EB4E00E8B1F7 /* Debug */,
+				30C67B2614D7EB4E00E8B1F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30C67AFD14D7EB4D00E8B1F7 /* Project object */;
+}
