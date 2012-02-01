@@ -18,8 +18,8 @@
 		30C67B2914D7EE5900E8B1F7 /* TCMTVShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B2814D7EE5900E8B1F7 /* TCMTVShow.m */; };
 		30C67B2D14D7EEEF00E8B1F7 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B2C14D7EEEF00E8B1F7 /* AppleScriptObjC.framework */; };
 		30C67B2F14D7F14F00E8B1F7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B2E14D7F14F00E8B1F7 /* ScriptingBridge.framework */; };
-		30C67B3F14D87F1900E8B1F7 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B3E14D87F1900E8B1F7 /* EMKeychainItem.m */; };
 		30C67B4D14D884AC00E8B1F7 /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B4C14D884AB00E8B1F7 /* libcommonCrypto.dylib */; };
+		312A2CDD14D9630200913898 /* EMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 312A2CDC14D9630200913898 /* EMKeychain.m */; };
 		3146EB9114D80D7D00191361 /* TCMTrakt.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146EB9014D80D7D00191361 /* TCMTrakt.m */; };
 		3174B77914D837CB00601C53 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B0E14D7EB4D00E8B1F7 /* CoreData.framework */; };
 		3174B77B14D837DA00601C53 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174B77A14D837DA00601C53 /* CoreServices.framework */; };
@@ -100,9 +100,9 @@
 		30C67B2C14D7EEEF00E8B1F7 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = /System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = "<absolute>"; };
 		30C67B2E14D7F14F00E8B1F7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = ../../../../../System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<group>"; };
 		30C67B3014D7F1DF00E8B1F7 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
-		30C67B3D14D87F1900E8B1F7 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
-		30C67B3E14D87F1900E8B1F7 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 		30C67B4C14D884AB00E8B1F7 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		312A2CDB14D9630200913898 /* EMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychain.h; sourceTree = "<group>"; };
+		312A2CDC14D9630200913898 /* EMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychain.m; sourceTree = "<group>"; };
 		3146EB8F14D80D7D00191361 /* TCMTrakt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMTrakt.h; sourceTree = "<group>"; };
 		3146EB9014D80D7D00191361 /* TCMTrakt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMTrakt.m; sourceTree = "<group>"; };
 		3174B77A14D837DA00601C53 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -207,8 +207,8 @@
 		30C67B1114D7EB4D00E8B1F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				30C67B3D14D87F1900E8B1F7 /* EMKeychainItem.h */,
-				30C67B3E14D87F1900E8B1F7 /* EMKeychainItem.m */,
+				312A2CDB14D9630200913898 /* EMKeychain.h */,
+				312A2CDC14D9630200913898 /* EMKeychain.m */,
 				3174B79614D84BB700601C53 /* favicon.png */,
 				30C67B1214D7EB4D00E8B1F7 /* iTrakt-Info.plist */,
 				30C67B1314D7EB4D00E8B1F7 /* InfoPlist.strings */,
@@ -327,7 +327,7 @@
 				30C67B1E14D7EB4D00E8B1F7 /* TCMAppDelegate.m in Sources */,
 				30C67B2914D7EE5900E8B1F7 /* TCMTVShow.m in Sources */,
 				3146EB9114D80D7D00191361 /* TCMTrakt.m in Sources */,
-				30C67B3F14D87F1900E8B1F7 /* EMKeychainItem.m in Sources */,
+				312A2CDD14D9630200913898 /* EMKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

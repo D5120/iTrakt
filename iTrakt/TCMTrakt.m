@@ -9,7 +9,7 @@
 #import "TCMTrakt.h"
 #import "TCMTVShow.h"
 #import "TCMAppDelegate.h"
-#import "EMKeychainItem.h"
+#import "EMKeychain.h"
 #include <CommonCrypto/CommonDigest.h>
 
 

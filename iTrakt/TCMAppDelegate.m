@@ -12,7 +12,7 @@
 #import "iTunes.h"
 #import "TCMTrakt.h"
 #import "TCMTVShow.h"
-#import "EMKeychainItem.h"
+#import "EMKeychain.h"
 
 @implementation TCMAppDelegate
 @synthesize statusMenu;
