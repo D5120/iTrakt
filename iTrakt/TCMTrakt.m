@@ -10,8 +10,8 @@
 #import "TCMTVShow.h"
 #import "TCMAppDelegate.h"
 #import "EMKeychain.h"
-#include <CommonCrypto/CommonDigest.h>
-
+#import <CommonCrypto/CommonDigest.h>
+#import <LRResty/LRResty.h>
 
 NSString * const apiKey = @"c98bf503329d778ed1196ea6f16c80b8c50c3bb9";
 
@@ -24,7 +24,6 @@ NSString * const apiKey = @"c98bf503329d778ed1196ea6f16c80b8c50c3bb9";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[TCMTrakt alloc] init];
-        [RKClient clientWithBaseURL:@"http://api.trakt.tv"];
     });
     return sharedInstance;
 }
@@ -102,34 +101,72 @@ NSString * const apiKey = @"c98bf503329d778ed1196ea6f16c80b8c50c3bb9";
 }
 
 
+- (void)callURL:(NSString *)requestUrl withParameters:(NSDictionary *)params completionHandler:(void (^)(NSDictionary *, NSError *))completionBlock
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:requestUrl]];
+    [request setHTTPMethod: @"POST"];
+    [request setHTTPBody: [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil]];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue setName:@"de.codingmonkeys.map.iTrakt"];
+    
+    // Send an asyncronous request on the queue
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        // If there was an error getting the data
+        if (error) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                completionBlock(nil, error);
+            });
+            return;
+        }
+        
+        // Decode the data
+        NSError *jsonError;
+        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        
+        // If there was an error decoding the JSON
+        if (jsonError) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                
+            });
+            return;
+        }
+        
+        // All looks fine, lets call the completion block with the response data
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            completionBlock(responseDict, nil);
+        });
+    }];
+}
+
+
+-(void)callAPI:(NSString*)apiCall WithParameters:(NSDictionary *)params {
+    [self callURL:[NSString stringWithFormat:@"http://api.trakt.tv/show/%@/%@", apiCall, apiKey] withParameters:params completionHandler:^(NSDictionary *dict, NSError *err) {
+        if ([[dict objectForKey:@"status"] isEqualToString:@"success"]){
+            NSLog(@"%@",[dict objectForKey:@"message"]);
+        }
+        if (err) NSLog(@"Error: %@",[dict description]);
+     }];
+    
+}
+
 -(void)watching:(TCMTVShow *)aShow {
-    NSLog(@"Watching %@", aShow);
-    [[RKClient sharedClient] post:[NSString stringWithFormat:@"/show/watching/%@", apiKey] params:[self dictionaryWithShow:aShow] delegate:self];
+    //NSLog(@"Watching %@", aShow);
+    [self callAPI:@"watching" WithParameters:[self dictionaryWithShow:aShow]];
+    
 }
 
 -(void)cancelWatching {
-    NSLog(@"Canceled Watching");
-    [[RKClient sharedClient] post:[NSString stringWithFormat:@"/show/cancelwatching/%@", apiKey] params:[self dictionaryWithShow:nil] delegate:self];
+    //NSLog(@"Canceled Watching");
+    [self callAPI:@"cancelwatching" WithParameters:[self dictionaryWithShow:nil]];
 }
 
 -(void)scrobble:(TCMTVShow *)aShow {
-    NSLog(@"Scrobble %@", aShow);
-    [[RKClient sharedClient] post:[NSString stringWithFormat:@"/show/scrobble/%@", apiKey] params:[self dictionaryWithShow:aShow] delegate:self];
-}
-
-- (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
-    if ([response isJSON]) {
-        NSDictionary *responseDict = [response parsedBody:nil];
-        if ([[responseDict objectForKey:@"status"] isEqualToString:@"success"]) {
-            //NSLog(@"trakt.tv: %@ (%@)", [responseDict objectForKey:@"message"],[responseDict objectForKey:@"year"]);
-        } else {
-            NSLog(@"Got a JSON response: %@", [response bodyAsString]);
-            if ([[responseDict objectForKey:@"error"] isEqualToString:@"failed authentication"]) {
-                [[NSApp delegate] showPrefWindow];
-            }
-
-        }
-    }
+    //NSLog(@"Scrobble %@", aShow);
+    [self callAPI:@"scrobble" WithParameters:[self dictionaryWithShow:aShow]];
 }
 
 @end
