@@ -16,7 +16,6 @@
 
 }
 
-+ (TCMTrakt *)sharedInstance;
 -(void)watching:(TCMTVShow *)aShow;
 -(void)cancelWatching;
 -(void)scrobble:(TCMTVShow *)aShow;

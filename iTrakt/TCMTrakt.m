@@ -12,20 +12,7 @@
 #import "EMKeychain.h"
 #import <CommonCrypto/CommonDigest.h>
 
-NSString * const apiKey = @"c98bf503329d778ed1196ea6f16c80b8c50c3bb9";
-
-
 @implementation TCMTrakt
-
-+ (TCMTrakt *)sharedInstance
-{
-    static TCMTrakt *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[TCMTrakt alloc] init];
-    });
-    return sharedInstance;
-}
 
 -(NSString *)username {
     
@@ -138,12 +125,12 @@ NSString * const apiKey = @"c98bf503329d778ed1196ea6f16c80b8c50c3bb9";
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             completionBlock(responseDict, nil);
         });
-    }];
+    }]; 
 }
 
 
 -(void)callAPI:(NSString*)apiCall WithParameters:(NSDictionary *)params {
-    [self callURL:[NSString stringWithFormat:@"http://api.trakt.tv/show/%@/%@", apiCall, apiKey] withParameters:params completionHandler:^(NSDictionary *dict, NSError *err) {
+    [self callURL:[NSString stringWithFormat:@"http://api.trakt.tv/show/%@/c98bf503329d778ed1196ea6f16c80b8c50c3bb9", apiCall] withParameters:params completionHandler:^(NSDictionary *dict, NSError *err) {
         if ([[dict objectForKey:@"status"] isEqualToString:@"success"]){
             NSLog(@"%@",[dict objectForKey:@"message"]);
         }

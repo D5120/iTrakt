@@ -19,7 +19,7 @@
 @synthesize passwordTextField;
 @synthesize preferenceWindow;
 
-@synthesize currentlyPlaying, statusItem;
+@synthesize currentlyPlaying, statusItem, trakt;
 
 
 - (void)registerForiTunesNotifcations {
@@ -45,9 +45,9 @@
     iTunesTrack *stoppedTrack = [entireLibrary lastObject]; // Boy this is complicated with ScriptingBrdige…
     
     if (currentlyPlaying.playCount<stoppedTrack.playedCount) {
-        [[TCMTrakt sharedInstance] scrobble:currentlyPlaying];
+        [self.trakt scrobble:currentlyPlaying];
     } else {
-        [[TCMTrakt sharedInstance] cancelWatching];
+        [self.trakt cancelWatching];
     }
     currentlyPlaying = nil;
 }
@@ -72,7 +72,7 @@
         
         currentlyPlaying = [TCMTVShow showWithiTunesTrack:current];
         
-        [[TCMTrakt sharedInstance] watching:currentlyPlaying];
+        [self.trakt watching:currentlyPlaying];
         
         //Spawn timer that calls /watching every 15 min?
         
@@ -86,7 +86,7 @@
 }
 
 -(void)updatePassword {
-    EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"iTrakt" withUsername:[[TCMTrakt sharedInstance] username]];
+    EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"iTrakt" withUsername:[self.trakt username]];
     if (keychainItem) {
         [passwordTextField setStringValue:keychainItem.password];
     } else {
@@ -96,9 +96,9 @@
 }
 
 - (IBAction)savePassword:(id)sender {
-    EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"iTrakt" withUsername:[[TCMTrakt sharedInstance] username]];
+    EMGenericKeychainItem *keychainItem = [EMGenericKeychainItem genericKeychainItemForService:@"iTrakt" withUsername:[self.trakt username]];
     if (!keychainItem) {
-        keychainItem = [EMGenericKeychainItem addGenericKeychainItemForService:@"iTrakt" withUsername:[[TCMTrakt sharedInstance] username] password:[passwordTextField stringValue]];
+        keychainItem = [EMGenericKeychainItem addGenericKeychainItemForService:@"iTrakt" withUsername:[self.trakt username] password:[passwordTextField stringValue]];
     }
     keychainItem.password = [passwordTextField stringValue];
 }
@@ -109,7 +109,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    self.trakt = [TCMTrakt new];
     [self registerForiTunesNotifcations];
     [self addStatusItem];
     [self updatePassword];

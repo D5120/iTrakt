@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class TCMTVShow;
+@class TCMTVShow, TCMTrakt;
 
 @interface TCMAppDelegate : NSObject <NSApplicationDelegate> {
 }
@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSSecureTextField *passwordTextField;
 
 @property (nonatomic, strong) TCMTVShow *currentlyPlaying;
+@property (nonatomic, strong) TCMTrakt *trakt;
 @property (nonatomic, strong) NSStatusItem *statusItem;
 
 -(void)showPrefWindow;
