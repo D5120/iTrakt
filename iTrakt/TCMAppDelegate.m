@@ -7,9 +7,6 @@
 //
 
 #import "TCMAppDelegate.h"
-//#import <AppleScriptObjC/AppleScriptObjC.h> // Should use this instead of SB
-#import <ScriptingBridge/ScriptingBridge.h>
-#import "iTunes.h"
 #import "TCMTrakt.h"
 #import "TCMTVShow.h"
 #import "EMKeychain.h"
@@ -36,15 +33,7 @@
 }
 
 -(void)scrobbleOrCancel {
-    //Compare save playcount to current playcount and act accordingly 
-    iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-    SBElementArray *sources = [iTunes sources];
-    SBElementArray *entireLibrary = [[[[sources objectAtIndex:0] libraryPlaylists] objectAtIndex:0] fileTracks];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"persistentID == %@", currentlyPlaying.persistentID];
-    [entireLibrary filterUsingPredicate:predicate];
-    iTunesTrack *stoppedTrack = [entireLibrary lastObject]; // Boy this is complicated with ScriptingBrdige…
-    
-    if (currentlyPlaying.playCount<stoppedTrack.playedCount) {
+    if (currentlyPlaying.playCount<[TCMTVShow playCountForID:currentlyPlaying.persistentID]) {
         [self.trakt scrobble:currentlyPlaying];
     } else {
         [self.trakt cancelWatching];
@@ -63,14 +52,9 @@
             [self scrobbleOrCancel]; 
         }
         
-        // Get full track via AppleScript
-        iTunesApplication * iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-        iTunesTrack *current = [iTunes currentTrack];
+        if (![TCMTVShow TVShowPlaying]) return;
         
-        BOOL isTVShow = (current.videoKind == iTunesEVdKTVShow);
-        if (!isTVShow) return;
-        
-        currentlyPlaying = [TCMTVShow showWithiTunesTrack:current];
+        currentlyPlaying = [TCMTVShow showWithCurrentTunesTrack];
         
         [self.trakt watching:currentlyPlaying];
         

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-@class iTunesTrack;
 
 @interface TCMTVShow : NSObject
 @property (nonatomic, strong) NSString *show;
@@ -20,7 +19,8 @@
 @property (nonatomic) NSInteger showYear;
 @property (nonatomic) NSInteger duration;
 
-
-+(TCMTVShow *)showWithiTunesTrack:(iTunesTrack *)track;
++(TCMTVShow *)showWithCurrentTunesTrack;
++(BOOL)TVShowPlaying;
++(NSInteger)playCountForID:(NSString*)anID;
 
 @end
