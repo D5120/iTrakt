@@ -62,11 +62,11 @@
         
     } else if ([playerState isEqualToString:@"Paused"]) {
       // Clear current playing show
-        [self scrobbleOrCancel]; 
+        if (currentlyPlaying) [self scrobbleOrCancel]; 
     } else if ([playerState isEqualToString:@"Stopped"]) {
        // If there was a TV Show playing, check for playcount and scrobble or suspend watching status
-        [self scrobbleOrCancel]; 
-    }
+        if (currentlyPlaying) [self scrobbleOrCancel]; 
+    }    
 }
 
 -(void)updatePassword {
