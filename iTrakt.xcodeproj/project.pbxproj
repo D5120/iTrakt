@@ -51,7 +51,6 @@
 		30C67B2014D7EB4E00E8B1F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		30C67B2714D7EE5900E8B1F7 /* TCMTVShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMTVShow.h; sourceTree = "<group>"; };
 		30C67B2814D7EE5900E8B1F7 /* TCMTVShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMTVShow.m; sourceTree = "<group>"; };
-		30C67B3014D7F1DF00E8B1F7 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		30C67B4C14D884AB00E8B1F7 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		312A2CDB14D9630200913898 /* EMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychain.h; sourceTree = "<group>"; };
 		312A2CDC14D9630200913898 /* EMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychain.m; sourceTree = "<group>"; };
@@ -116,7 +115,6 @@
 		30C67B1014D7EB4D00E8B1F7 /* iTrakt */ = {
 			isa = PBXGroup;
 			children = (
-				30C67B3014D7F1DF00E8B1F7 /* iTunes.h */,
 				3146EB8F14D80D7D00191361 /* TCMTrakt.h */,
 				3146EB9014D80D7D00191361 /* TCMTrakt.m */,
 				30C67B2714D7EE5900E8B1F7 /* TCMTVShow.h */,

@@ -24,27 +24,20 @@
     return username;
 }
 
--(NSString*)sha1hashWithString:(NSString*)aString{
-    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
-    NSData *stringBytes = [aString dataUsingEncoding: NSUTF8StringEncoding];
-    if (CC_SHA1([stringBytes bytes], (CC_LONG)[stringBytes length], digest)) {
-        NSString *hexBytes = nil;
-        const unsigned char* bytes = digest;
-        char *strbuf = (char *)malloc([stringBytes length] * 2 + 1);
-        static const char hexdigits[] = "0123456789abcdef";
-        char *hex = strbuf;
-
-        for (int i = 0; i<([stringBytes length]+1)*2; ++i) {
-            const unsigned char c = *bytes++;
-            *hex++ = hexdigits[(c >> 4) & 0xF];
-            *hex++ = hexdigits[(c ) & 0xF];
-        }
-        *hex = 0;
-        hexBytes = [NSString stringWithUTF8String:strbuf];
-        free(strbuf);
-        return hexBytes;
-    } 
-    return nil;
+-(NSString*)sha1hashWithString:(NSString*)str {
+    const char *cStr = [str UTF8String];
+    unsigned char result[CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(cStr, strlen(cStr), result);
+    NSString *s = [NSString  stringWithFormat:
+                   @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+                   result[0], result[1], result[2], result[3], result[4],
+                   result[5], result[6], result[7],
+                   result[8], result[9], result[10], result[11], result[12],
+                   result[13], result[14], result[15],
+                   result[16], result[17], result[18], result[19]
+                   ];
+    
+    return [s lowercaseString];
 }
 
 -(NSString *)password {
@@ -130,29 +123,29 @@
 
 
 -(void)callAPI:(NSString*)apiCall WithParameters:(NSDictionary *)params {
-    [self callURL:[NSString stringWithFormat:@"http://api.trakt.tv/show/%@/c98bf503329d778ed1196ea6f16c80b8c50c3bb9", apiCall] withParameters:params completionHandler:^(NSDictionary *dict, NSError *err) {
+    [self callURL:apiCall withParameters:params completionHandler:^(NSDictionary *dict, NSError *err) {
         if ([[dict objectForKey:@"status"] isEqualToString:@"success"]){
             NSLog(@"%@",[dict objectForKey:@"message"]);
         }
-        if (err) NSLog(@"Error: %@",[dict description]);
+        if (err) NSLog(@"Error: %@",[err description]);
      }];
     
 }
 
 -(void)watching:(TCMTVShow *)aShow {
     //NSLog(@"Watching %@", aShow);
-    [self callAPI:@"watching" WithParameters:[self dictionaryWithShow:aShow]];
+    [self callAPI:@"http://api.trakt.tv/show/watching/c98bf503329d778ed1196ea6f16c80b8c50c3bb9" WithParameters:[self dictionaryWithShow:aShow]];
     
 }
 
 -(void)cancelWatching {
     //NSLog(@"Canceled Watching");
-    [self callAPI:@"cancelwatching" WithParameters:[self dictionaryWithShow:nil]];
+    [self callAPI:@"http://api.trakt.tv/show/cancelwatching/c98bf503329d778ed1196ea6f16c80b8c50c3bb9" WithParameters:[self dictionaryWithShow:nil]];
 }
 
 -(void)scrobble:(TCMTVShow *)aShow {
     //NSLog(@"Scrobble %@", aShow);
-    [self callAPI:@"scrobble" WithParameters:[self dictionaryWithShow:aShow]];
+    [self callAPI:@"http://api.trakt.tv/show/scrobble/c98bf503329d778ed1196ea6f16c80b8c50c3bb9" WithParameters:[self dictionaryWithShow:aShow]];
 }
 
 @end
