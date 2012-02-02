@@ -11,7 +11,6 @@
 #import "TCMAppDelegate.h"
 #import "EMKeychain.h"
 #import <CommonCrypto/CommonDigest.h>
-#import <LRResty/LRResty.h>
 
 NSString * const apiKey = @"c98bf503329d778ed1196ea6f16c80b8c50c3bb9";
 
