@@ -10,6 +10,7 @@
 #import "TCMTrakt.h"
 #import "TCMTVShow.h"
 #import "EMKeychain.h"
+#import <AppleScriptObjC/AppleScriptObjC.h>
 
 @implementation TCMAppDelegate
 @synthesize statusMenu;
@@ -97,7 +98,11 @@
     [self registerForiTunesNotifcations];
     [self addStatusItem];
     [self updatePassword];
+
+    [[NSBundle mainBundle] loadAppleScriptObjectiveCScripts];    
+    
 }
 
 
 @end
+

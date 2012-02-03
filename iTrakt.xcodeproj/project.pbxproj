@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		301EEB2614DA0A6900B352D0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301EEB2514DA0A6900B352D0 /* Security.framework */; };
+		301EEB2814DB512100B352D0 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301EEB2714DB512100B352D0 /* AppleScriptObjC.framework */; };
+		301EEB2F14DB529B00B352D0 /* iTunes.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 301EEB2E14DB529B00B352D0 /* iTunes.applescript */; };
 		30C67B0B14D7EB4D00E8B1F7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */; };
 		30C67B1514D7EB4D00E8B1F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30C67B1314D7EB4D00E8B1F7 /* InfoPlist.strings */; };
 		30C67B1714D7EB4D00E8B1F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B1614D7EB4D00E8B1F7 /* main.m */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		301EEB2514DA0A6900B352D0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		301EEB2714DB512100B352D0 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		301EEB2E14DB529B00B352D0 /* iTunes.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = iTunes.applescript; sourceTree = "<group>"; };
 		30C67B0614D7EB4D00E8B1F7 /* iTrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		30C67B0D14D7EB4D00E8B1F7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301EEB2814DB512100B352D0 /* AppleScriptObjC.framework in Frameworks */,
 				301EEB2614DA0A6900B352D0 /* Security.framework in Frameworks */,
 				30C67B4D14D884AC00E8B1F7 /* libcommonCrypto.dylib in Frameworks */,
 				3174B77914D837CB00601C53 /* CoreData.framework in Frameworks */,
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				30C67B4C14D884AB00E8B1F7 /* libcommonCrypto.dylib */,
+				301EEB2714DB512100B352D0 /* AppleScriptObjC.framework */,
 				301EEB2514DA0A6900B352D0 /* Security.framework */,
 				30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */,
 				30C67B0C14D7EB4D00E8B1F7 /* Other Frameworks */,
@@ -115,6 +121,7 @@
 		30C67B1014D7EB4D00E8B1F7 /* iTrakt */ = {
 			isa = PBXGroup;
 			children = (
+				301EEB2E14DB529B00B352D0 /* iTunes.applescript */,
 				3146EB8F14D80D7D00191361 /* TCMTrakt.h */,
 				3146EB9014D80D7D00191361 /* TCMTrakt.m */,
 				30C67B2714D7EE5900E8B1F7 /* TCMTVShow.h */,
@@ -213,6 +220,7 @@
 				30C67B2914D7EE5900E8B1F7 /* TCMTVShow.m in Sources */,
 				3146EB9114D80D7D00191361 /* TCMTrakt.m in Sources */,
 				312A2CDD14D9630200913898 /* EMKeychain.m in Sources */,
+				301EEB2F14DB529B00B352D0 /* iTunes.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

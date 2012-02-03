@@ -27,7 +27,7 @@
 -(NSString*)sha1hashWithString:(NSString*)str {
     const char *cStr = [str UTF8String];
     unsigned char result[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(cStr, strlen(cStr), result);
+    CC_SHA1(cStr, (CC_LONG)strlen(cStr), result);
     NSString *s = [NSString  stringWithFormat:
                    @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
                    result[0], result[1], result[2], result[3], result[4],
@@ -129,7 +129,6 @@
         }
         if (err) NSLog(@"Error: %@",[err description]);
      }];
-    
 }
 
 -(void)watching:(TCMTVShow *)aShow {

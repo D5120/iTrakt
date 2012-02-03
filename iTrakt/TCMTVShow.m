@@ -12,45 +12,36 @@
 
 @synthesize show, episodeName, seasonNumber, episodeNumber, tvdbID, playCount, showYear, duration, persistentID;
 
-+(NSInteger)playCountForID:(NSString*)anID {
-    NSDictionary *err;
-    NSAppleEventDescriptor *result = [[[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"iTunes\"\n set lib_ref to first library playlist\n set track_id to (database ID of some track of lib_ref)\n  tell lib_ref\nset track_ref to (last track whose database ID is %@) \n end tell\n set foo to played count of track_ref\n end tell", anID]] executeAndReturnError:&err];
-    if (!err) return [[result stringValue] intValue];
-    else {
-        NSLog(@"err %@",err);
-    }
-    return -1;
-}
-
-+(NSString *)stringForProperty:(NSString*)property {
-    NSDictionary *err;
-    NSAppleEventDescriptor *result = [[[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"iTunes\"\n set foo to %@ of current track\nend tell", property]] executeAndReturnError:&err];
-    if (!err) return [result stringValue];
-    else {
-        NSLog(@"err %@",err);
-    }
-    return nil;
-}
+static id iTunesBridge;
 
 +(BOOL)TVShowPlaying {
-    return [[TCMTVShow stringForProperty:@"video kind"] isEqualToString:@"kVdT"];
+    if (!iTunesBridge) iTunesBridge = NSClassFromString(@"iTunesBridge");
+    return [[iTunesBridge videoKind] isEqualToString:@"«constant ****kVdT»"];
+}
+
++(NSInteger)playCountForID:(NSString*)anID{
+    if (!iTunesBridge) iTunesBridge = NSClassFromString(@"iTunesBridge");
+    return [iTunesBridge playCountOfTrack:anID];
 }
 
 +(TCMTVShow *)showWithCurrentTunesTrack {
+    
+    if (!iTunesBridge) iTunesBridge = NSClassFromString(@"iTunesBridge");
+    
     TCMTVShow *show = [TCMTVShow new];
-    show.show           = [TCMTVShow stringForProperty:@"show"];
+    show.show           = [iTunesBridge show];
     if (!show.show) return nil;
-    show.episodeName    = [TCMTVShow stringForProperty:@"name"];
-    show.seasonNumber   = [[TCMTVShow stringForProperty:@"season number"] intValue];
-    show.episodeNumber  = [[TCMTVShow stringForProperty:@"episode number"] intValue];
-    show.tvdbID         = [TCMTVShow stringForProperty:@"name"];
-    show.playCount      = [[TCMTVShow stringForProperty:@"played count"] intValue];
-    show.showYear       = [[TCMTVShow stringForProperty:@"year"] intValue];
-    show.duration       = (NSInteger)([[TCMTVShow stringForProperty:@"duration"] intValue]/60); // we want minutes, itunes gives us seconds
-    show.persistentID   = [TCMTVShow stringForProperty:@"database ID"];
+    show.episodeName    = [iTunesBridge episodeName];
+    show.seasonNumber   = [[iTunesBridge seasonNumberString] intValue];
+    show.episodeNumber  = [[iTunesBridge episodeNumberString]intValue];
+    show.tvdbID         = [iTunesBridge tvdbID];
+    show.playCount      = [[iTunesBridge playCountString]intValue];
+    show.showYear       = [[iTunesBridge showYearString]intValue];
+    show.duration       = (NSInteger)([[iTunesBridge durationString] intValue]/60); // we want minutes, itunes gives us seconds
+    show.persistentID   = [iTunesBridge databaseID];
+    
     return show;
 }
-
 
 
 -(NSString *)description{
