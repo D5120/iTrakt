@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RestKit/RestKit.h>
 
 @class TCMTVShow;
 
-@interface TCMTrakt : NSObject <RKRequestDelegate> {
+@interface TCMTrakt : NSObject {
 
 
 }
