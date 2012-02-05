@@ -36,5 +36,5 @@
 - (NSString*)playCountString;
 - (NSString*)showYearString;
 - (NSString*)durationString;
-- (NSInteger)playCountOfTrack:(NSString*)trackNumber;
+- (NSString*)playCountOfTrack:(NSString*)trackNumber;
 @end

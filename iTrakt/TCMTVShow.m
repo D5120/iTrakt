@@ -21,7 +21,7 @@ static id iTunesBridge;
 
 +(NSInteger)playCountForID:(NSString*)anID{
     if (!iTunesBridge) iTunesBridge = NSClassFromString(@"iTunesBridge");
-    return [iTunesBridge playCountOfTrack:anID];
+    return [[iTunesBridge playCountOfTrack:anID] intValue];
 }
 
 +(TCMTVShow *)showWithCurrentTunesTrack {

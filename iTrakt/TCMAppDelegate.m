@@ -34,6 +34,7 @@
 }
 
 -(void)scrobbleOrCancel {
+    NSLog(@"%d %d",currentlyPlaying.playCount ,[TCMTVShow playCountForID:currentlyPlaying.persistentID]);
     if (currentlyPlaying.playCount<[TCMTVShow playCountForID:currentlyPlaying.persistentID]) {
         [self.trakt scrobble:currentlyPlaying];
     } else {
@@ -101,6 +102,9 @@
 
     [[NSBundle mainBundle] loadAppleScriptObjectiveCScripts];    
     
+}
+- (IBAction)quitApplication:(id)sender {
+    [NSApp terminate:self];
 }
 
 
