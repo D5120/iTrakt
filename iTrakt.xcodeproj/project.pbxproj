@@ -10,6 +10,7 @@
 		301EEB2614DA0A6900B352D0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301EEB2514DA0A6900B352D0 /* Security.framework */; };
 		301EEB2814DB512100B352D0 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301EEB2714DB512100B352D0 /* AppleScriptObjC.framework */; };
 		301EEB2F14DB529B00B352D0 /* iTunes.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 301EEB2E14DB529B00B352D0 /* iTunes.applescript */; };
+		3054D85414E04254006619F1 /* favicon-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3054D85314E04254006619F1 /* favicon-off.png */; };
 		30C67B0B14D7EB4D00E8B1F7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */; };
 		30C67B1514D7EB4D00E8B1F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30C67B1314D7EB4D00E8B1F7 /* InfoPlist.strings */; };
 		30C67B1714D7EB4D00E8B1F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C67B1614D7EB4D00E8B1F7 /* main.m */; };
@@ -40,6 +41,7 @@
 		301EEB2514DA0A6900B352D0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		301EEB2714DB512100B352D0 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		301EEB2E14DB529B00B352D0 /* iTunes.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = iTunes.applescript; sourceTree = "<group>"; };
+		3054D85314E04254006619F1 /* favicon-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favicon-off.png"; sourceTree = "<group>"; };
 		30C67B0614D7EB4D00E8B1F7 /* iTrakt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrakt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C67B0A14D7EB4D00E8B1F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		30C67B0D14D7EB4D00E8B1F7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -140,6 +142,7 @@
 				312A2CDB14D9630200913898 /* EMKeychain.h */,
 				312A2CDC14D9630200913898 /* EMKeychain.m */,
 				3174B79614D84BB700601C53 /* favicon.png */,
+				3054D85314E04254006619F1 /* favicon-off.png */,
 				30C67B1214D7EB4D00E8B1F7 /* iTrakt-Info.plist */,
 				30C67B1314D7EB4D00E8B1F7 /* InfoPlist.strings */,
 				30C67B1614D7EB4D00E8B1F7 /* main.m */,
@@ -205,6 +208,7 @@
 				30C67B1B14D7EB4D00E8B1F7 /* Credits.rtf in Resources */,
 				30C67B2114D7EB4E00E8B1F7 /* MainMenu.xib in Resources */,
 				3174B79714D84BB700601C53 /* favicon.png in Resources */,
+				3054D85414E04254006619F1 /* favicon-off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

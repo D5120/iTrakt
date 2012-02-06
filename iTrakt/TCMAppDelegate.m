@@ -24,22 +24,25 @@
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(iTunesPlaybackStateChanged:) name:@"com.apple.iTunes.playerInfo" object:@"com.apple.iTunes.player" suspensionBehavior:NSNotificationSuspensionBehaviorCoalesce];
 }
 
+-(void)setStatus:(BOOL)watching {
+    [statusItem setImage:watching?[NSImage imageNamed:@"favicon.png"]:[NSImage imageNamed:@"favicon-off.png"]];
+}
+
 -(void)addStatusItem {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     
-    NSImage *statusImage = [NSImage imageNamed:@"favicon.png"];
-    [statusItem setImage:statusImage];
+    [self setStatus:NO];
     [statusItem setHighlightMode:YES];
     [statusItem setMenu:statusMenu];
 }
 
 -(void)scrobbleOrCancel {
-    NSLog(@"%d %d",currentlyPlaying.playCount ,[TCMTVShow playCountForID:currentlyPlaying.persistentID]);
     if (currentlyPlaying.playCount<[TCMTVShow playCountForID:currentlyPlaying.persistentID]) {
         [self.trakt scrobble:currentlyPlaying];
     } else {
         [self.trakt cancelWatching];
     }
+    [self setStatus:NO];
     currentlyPlaying = nil;
 }
 
@@ -59,7 +62,7 @@
         currentlyPlaying = [TCMTVShow showWithCurrentTunesTrack];
         
         [self.trakt watching:currentlyPlaying];
-        
+        [self setStatus:YES];
         //Spawn timer that calls /watching every 15 min?
         
     } else if ([playerState isEqualToString:@"Paused"]) {
