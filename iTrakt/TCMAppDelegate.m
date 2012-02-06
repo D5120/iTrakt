@@ -110,6 +110,12 @@
     [NSApp terminate:self];
 }
 
+- (IBAction)openProfileWebsite:(id)sender {
+    NSString *username = self.trakt.username;
+    if (username) {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://trakt.tv/user/%@",username]]];
+    }
+}
 
 @end
 
